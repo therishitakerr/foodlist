@@ -1,0 +1,60 @@
+img
+{
+    border-style: solid;
+    float: left;
+    margin:5px;
+}
+#favButton
+{
+    float: right;
+    margin-left: 20px;
+}
+.list
+{
+    width:400px; max-height:400px; overflow: auto;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.eachlist
+{
+    padding: 10px;
+    margin: 5px;
+    border-style: solid;
+    width: 375px; 
+    background-image: linear-gradient(to bottom right, rgb(127, 127, 127), rgb(252, 252, 252));    
+}
+
+#headerContainer
+{
+    background-color: lightcoral;
+    padding: 10px;
+}
+#special
+{
+    float: right;
+    min-width: 200px;
+    border-style: solid;
+    margin-right: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right, rgb(127, 127, 127), rgb(255, 255, 255));
+}
+
+#displayContainer
+{
+    margin: 20px;
+}
+#specialitems
+{
+    padding-left: 4px;
+}
+.formlabel
+{
+    display: block;
+    float: left;
+    width : 80px;    
+}
+.set-width 
+{
+    width: 150px;
+}

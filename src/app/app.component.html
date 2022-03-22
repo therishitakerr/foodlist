@@ -1,0 +1,36 @@
+<div id="base">
+    <p id="headerContainer">Calory Tracker</p>
+
+    <div id="special">
+        Today's Food{{" "+totalCalories+" cal"}}<br>
+        <div id="specialitems" *ngFor="let f of getfavfooditems()">
+            {{"* "+f.name+" "+f.calories+" x"+f.quantity}}
+        </div>
+    </div>
+    <div id="displayContainer">
+        <label for="searchBox">Enter text to search:  </label>
+        <input type="text" class="set-width" id="searchBox" name="searchBox" [(ngModel)]="searchfood"><br><br>
+        <button class="btn btn-success" id="newFood" (click)=showFoodForm()>Add New Food</button><br><br>
+        <form [hidden]="!foodform" #foodForm="ngForm" (ngSubmit)="addFood(foodForm)">
+            <label class="formlabel" for="name">Name: </label>
+            <input type="text" class="set-width" id="name" name="name" ngModel required="required"><br><br>
+            <label class="formlabel" for="calories">Calories: </label>
+            <input type="number" class="set-width" id="calories" name="calories" ngModel required="required"><br><br>
+            <label class="formlabel" for="image">Image: </label>
+            <input type="text" class="set-width" id="image" name="image" ngModel required="required"><br><br>
+            <button class="btn btn-primary" [disabled]="foodForm.invalid" type="submit">submit</button>
+        </form>
+        <div class="list">
+            <div class="eachlist" *ngFor="let f of getfooditems()">
+                <img src={{f.image}} alt="no image available" width="100" height="100">
+                <button class="btn btn-info" id="favButton" (click)="addFavorites(f)">Add To Favs</button>
+                Name: {{f.name}}<br>
+                Calories: {{f.calories}}<br>
+                Quantity:{{f.quantity}}<br><br>
+                <label>Quantity: </label>
+                <input type="text" id="newQuantity" name="newQuantity" size="4" [(ngModel)]="newQuantity">
+                <button class="btn btn-secondary" [disabled]="!newQuantity" (click)="addQuantity(f)" style="text-align: center;">add</button>
+            </div>
+        </div>
+    </div>
+</div>
